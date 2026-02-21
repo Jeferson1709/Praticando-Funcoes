@@ -4,3 +4,16 @@
 
 // o nome do usuário, e
 // uma função de callback que será executada após 3 segundos.
+
+function responderUsuario(nome, fncallback) {
+  console.log("Processando sua pergunta...");
+  setTimeout(() => {
+    fncallback(nome);
+  }, 3000);
+}
+
+function mostrarResposta(nome) {
+  console.log(`Olá, ${nome}! Aqui está a resposta para sua dúvida`);
+}
+
+responderUsuario("Jeferson", mostrarResposta);

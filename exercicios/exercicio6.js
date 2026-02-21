@@ -5,3 +5,21 @@
 // o nome do cliente,
 // o tipo do cliente (vip, novo ou comum),
 // e uma função de callback responsável por exibir uma mensagem após o pedido ser processado.
+
+
+function processarPedido(nome, tipoCliente, callback) {
+    console.log(`Processando pedido de ${nome}...`);
+    callback(nome, tipoCliente);
+}
+ 
+function mensagemPersonalizada(nome, tipo) {
+    if (tipo === "vip") {
+        console.log(`Obrigado pela preferência, ${nome}! Você ganhou frete grátis.`);
+    } else if (tipo === "novo") {
+        console.log(`Bem-vindo(a), ${nome}! Aproveite um cupom de boas-vindas.`);
+    } else {
+        console.log(`Obrigado pela sua compra, ${nome}!`);
+    }
+}
+ 
+processarPedido("Jeferson", "vip", mensagemPersonalizada);
